@@ -11,7 +11,7 @@ class AuthorController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 2, 100)
-        respond authorService.list(params), model:[authorCount: authorService.count()]
+        respond authorService.list(), model:[authorCount: authorService.count()]
     }
 
     def show(Long id) {

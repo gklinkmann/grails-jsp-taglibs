@@ -1,3 +1,4 @@
+<%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,14 +16,21 @@
         </div>
         <div id="list-author" class="content scaffold-list" role="main">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            
+            <g:unescape>
+	            <display:table id="authorList" name="authorList" defaultsort="1" pagesize="5" sort="list" 
+								requestURI="index"
+	            	 			decorator="de.koo.DisplaytagWrapper">
+					<display:column property="authorLink" title="ID" sortable="true" />						
+					<display:column property="lastname" title="Lastame" sortable="true"/>						
+					<display:column property="firstname" title="Firstame" sortable="true"/>						
+					<display:column property="authorBooks" title="Books" />						
+				</display:table>
+			</g:unescape>
+            
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${authorList}" />
-
-            <div class="pagination">
-                <g:paginate total="${authorCount ?: 0}" />
-            </div>
         </div>
     </body>
 </html>
