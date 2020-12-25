@@ -18,11 +18,11 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${bookList}" />
 
             <div class="pagination">
                 <g:paginate total="${bookCount ?: 0}" />
             </div>
+            <f:table collection="${bookList}" />
         </div>
     </body>
 </html>
