@@ -19,7 +19,7 @@
             
             <g:unescape>
 	            <display:table id="authorList" name="authorList" defaultsort="1" pagesize="5" sort="list" 
-								requestURI="index"
+								requestURI="index" export="true"
 	            	 			decorator="de.koo.DisplaytagWrapper">
 					<display:column property="authorLink" title="ID" sortable="true" />						
 					<display:column property="lastname" title="Lastame" sortable="true"/>						
